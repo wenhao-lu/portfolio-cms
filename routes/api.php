@@ -110,3 +110,37 @@ Route::get('/contacts/list', function(){
     return $contacts;
 
 });
+
+
+
+// Handle API requests for the HTML Game 
+Route::middleware('cors')->post('/scores', function () {
+    
+});
+
+Route::post('/scores', function(Request $request) {
+    $validatedData = $request->validate([
+        'name' => 'required',
+        'level' => 'required',
+        'points' => 'required',
+    ]);
+
+     // Create a new Score instance and set the data
+     $score = new Score();
+     $score->name = $validatedData['name'];
+     $score->level = $validatedData['level'];
+     $score->points = $validatedData['points'];
+ 
+     // Save the scores in the database
+     $score->save();
+ 
+     // Return a response indicating success
+     return response()->json(['message' => 'Scores sent successfully']);
+});
+
+Route::get('/scores/list', function(){
+
+    $scores = Score::orderBy('points')->get();
+    return $scores;
+
+});
