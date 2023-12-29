@@ -2,39 +2,52 @@
 
 @section ('content')
 
-<section class="w3-padding">
-        
-    <h2 class="w3-text-blue">About Me!</h2>
-
-    <p>
-        Quisque felis ex, pellentesque vel elementum eu, bibendum vel massa. Donec id feugiat 
-        erat. Aliquam commodo rutrum velit, vitae vestibulum purus ullamcorper vestibulum. Orci 
-        varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    </p>
-
-    <h3>My Skills</h3>
-
-    <ul>
-        <li>PHP</li>
-        <li>Laravel</li>
-        <li>MySQL</li>
-    </ul>
-
-</section>
-
-<hr>
 
 <section class="w3-padding w3-container">
 
-    <h2 class="w3-text-blue">Projects</h2>
 
     @foreach ($projects as $project)
+
+    <div class="project-container">
+        <div class="project-card">
+                @if ($project->image)
+                    <div class="project-image">
+                        <a href="{{$project->url}}" target="_blank">
+                            <img src="{{asset('storage/'.$project->image)}}" width="200">
+                        </a>
+                    </div>
+                @endif
+
+            <div class="project-title">
+                {{$project->title}}
+            </div>
+
+            <div className="projectLink">
+                <a href="{{$project->url}}"   target="_blank">
+                    <img src="{{asset('storage/live.gif')}}" width="20">
+                </a>
+
+            <a href="{{$project->slug}}"  target="_blank">
+                <img src="{{asset('storage/github.gif')}}" width="20">
+            </a>
+          </div>
+
+
+
+        </div>
+
+
+    </div>    
+
+
+
+
 
         <div class="w3-card w3-margin">
 
             <div class="w3-container w3-blue">
 
-                <h3>{{$project->title}}</h3>
+                
 
             </div>
             
@@ -53,7 +66,7 @@
                 <p>
                     Posted: {{$project->created_at->format('M j, Y')}}
                     <br>
-                    Type: {{$project->type->title}}
+                    Type1: {{$project->type->title}}
                 </p>
 
                 <a href="/project/{{$project->slug}}" class="w3-button w3-green">View Project Details</a>

@@ -22,7 +22,7 @@
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="url">URL:</label>
+            <label for="url">Live:</label>
             <input type="text" name="url" id="url" value="{{old('url')}}">
 
             @if ($errors->first('url'))
@@ -32,7 +32,7 @@
         </div>
 
         <div class="w3-margin-bottom">
-            <label for="slug">Slug:</label>
+            <label for="slug">GitHub:</label>
             <input type="text" name="slug" id="slug" value="{{old('slug')}}" required>
 
             @if ($errors->first('slug'))
@@ -67,6 +67,8 @@
                 <span class="w3-text-red">{{$errors->first('type_id')}}</span>
             @endif
         </div>
+
+        
 
         <button type="submit" class="addBtn">Add Project</button>
 
