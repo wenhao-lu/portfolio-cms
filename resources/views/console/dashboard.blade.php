@@ -14,6 +14,7 @@
         <li><a href="/console/educations/list">Educations</a></li>
         <li><a href="/console/users/list">Users</a></li>
         <li><a href="/console/stacks/list">Stacks</a></li>
+        <li><a href="/console/contacts/list">Contacts</a></li>
     </ul>
 
 </section>
@@ -34,9 +35,10 @@
 
     }
     #consoleMain {
-        display: flex;
+        display: grid;
         margin: 5em 0 0 13em;
         margin-top: 2em;
+        grid-template-columns: repeat(4,1fr);
     }
     
     #consoleMain li {
@@ -105,9 +107,11 @@
         background-image: linear-gradient(to bottom right, #FF6633, #FFB399);
     }
     #consoleMain li:nth-child(6) {
-        background-image: linear-gradient(to bottom right, #FF6633, #FFB399);
+        background-image: linear-gradient(to bottom right, #FFB399, #FF33FF);
     }
-    
+    #consoleMain li:nth-child(7) {
+        background-image: linear-gradient(to bottom right, #1E90FF, #0066CC);
+    }
     
     #consoleMain li:nth-child(1):before {
         background-image: linear-gradient(to bottom right, #FF6633, #FFB399);
@@ -129,7 +133,14 @@
         background-image: linear-gradient(to bottom right, #FF6633, #FFB399);
     }
     #consoleMain li:nth-child(6):before {
-        background-image: linear-gradient(to bottom right, #FF6633, #FFB399);
+        background-image: linear-gradient(to bottom right, #FFB399, #FF33FF);
     }
+    #consoleMain li:nth-child(7):before {
+        background-image: linear-gradient(to bottom right, #1E90FF, #0066CC);
+    }
+
+
+
+
 </style>
 

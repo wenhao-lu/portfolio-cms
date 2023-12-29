@@ -9,11 +9,9 @@
 
     <table>
         <tr class="banner">
-            <th></th>
             <th>Name</th>
             <th>email</th>
-            <th>Msg</th>
-            <th></th>
+            <th>Message</th>
             <th></th>
             <th></th>
         </tr>
