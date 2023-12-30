@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<section class="w3-padding">
+<section class="login-box">
 
     <form method="post" action="/console/login" novalidate>
 

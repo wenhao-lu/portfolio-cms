@@ -3,17 +3,17 @@
 @section ('content')
 
 
-<section class="w3-padding w3-container">
+<section class="project-container">
 
 
     @foreach ($projects as $project)
 
-    <div class="project-container">
+    <div class="project-grid-item">
         <div class="project-card">
                 @if ($project->image)
                     <div class="project-image">
                         <a href="{{$project->url}}" target="_blank">
-                            <img src="{{asset('storage/'.$project->image)}}" width="200">
+                            <img src="{{asset('storage/'.$project->image)}}">
                         </a>
                     </div>
                 @endif
@@ -22,14 +22,21 @@
                 {{$project->title}}
             </div>
 
-            <div className="projectLink">
-                <a href="{{$project->url}}"   target="_blank">
-                    <img src="{{asset('storage/live.gif')}}" width="20">
-                </a>
+            <div class="project-content">
+                {{$project->content}}
+            </div>
 
-            <a href="{{$project->slug}}"  target="_blank">
-                <img src="{{asset('storage/github.gif')}}" width="20">
-            </a>
+            <div class="project-link-container">
+                <div class="project-link">
+                    <a href="{{$project->url}}"   target="_blank">
+                        <img src="{{asset('storage/live.png')}}" alt="live-link" />
+                    </a>
+                </div>
+                <div class="project-link">
+                    <a href="{{$project->slug}}"  target="_blank">
+                        <img src="{{asset('storage/github.png')}}" alt="github-link" />
+                    </a>
+                </div>
           </div>
 
 
@@ -41,41 +48,6 @@
 
 
 
-
-
-        <div class="w3-card w3-margin">
-
-            <div class="w3-container w3-blue">
-
-                
-
-            </div>
-            
-            @if ($project->image)
-                <div class="w3-container w3-margin-top">
-                    <img src="{{asset('storage/'.$project->image)}}" width="200">
-                </div>
-            @endif
-
-            <div class="w3-container w3-padding">
-
-                @if ($project->url)
-                    View Project: <a href="{{$project->url}}">{{$project->url}}</a>
-                @endif
-
-                <p>
-                    Posted: {{$project->created_at->format('M j, Y')}}
-                    <br>
-                    Type1: {{$project->type->title}}
-                </p>
-
-                <a href="/project/{{$project->slug}}" class="w3-button w3-green">View Project Details</a>
-
-            </div>
-        
-
-        </div>
-
     @endforeach
 
 </section>
@@ -83,14 +55,22 @@
 <hr>
 
 <section class="w3-padding">
+    <h2 class="contact-text">Contact Me</h2>
+    <div class="contact-link-container">
+        
+        <div class="contact-link">
+            <a href="mailto:wenhaolu.kevin@gmail.com"  target="_blank">
+                <img src="{{asset('storage/mail1.png')}}" alt="email-link" />
+            </a>
+        </div>
 
-    <h2 class="w3-text-blue">Contact Me</h2>
+        <div class="contact-link">
+            <a href="https://www.linkedin.com/in/kevin-l-6290b2145/"  target="_blank">
+                <img src="{{asset('storage/linkedin.png')}}" alt="linkedin-link" />
+            </a>
+        </div>
 
-    <p>
-        Phone: 111.222.3333
-        <br>
-        Email: <a href="mailto:email@address.com">email@address.com</a>
-    </p>
+    </div>    
 
 </section>
 
