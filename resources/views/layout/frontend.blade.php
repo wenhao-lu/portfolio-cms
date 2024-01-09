@@ -36,7 +36,7 @@
         <a href="/console/dashboard">Dashboard</a>
     @else
     <div class="front-login">
-        <p>Log In for Individual Apps</p>
+        <p class="login-text">Log Into CMS Dashboard</p>
         <a href="/console/login">Login</a>
     </div>    
     @endif

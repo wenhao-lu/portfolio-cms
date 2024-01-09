@@ -85,7 +85,7 @@ hr{
 
 
 /* Contact section */
-.contact-text{
+.contact-text,.login-text{
     text-align: center;
     color: #4C8AF2;
 }
