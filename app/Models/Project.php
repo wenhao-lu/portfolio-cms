@@ -17,11 +17,24 @@ class Project extends Model
     protected $fillable = [
         'title',
         'url',
-        'content',
+        'subtitle',
+        'content1',
+        'content2',
+        'content3',
         'slug',
         'image',
         'type_id',
         'user_id',
+        'stack1',
+        'stack2',
+        'stack3',
+        'stack4',
+        'stack5',
+        'stack6',
+        'stack7',
+        'stack8',
+        'stack9',
+        'stack10',
     ];
 
     public function type()
@@ -36,7 +49,7 @@ class Project extends Model
 
     public function stacks()
     {
-        return $this->belongsToMany(Topic::class);
+        return $this->belongsToMany(Stack::class);
     }
     
     public function getRouteKeyName()

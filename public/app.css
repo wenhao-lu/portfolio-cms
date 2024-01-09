@@ -58,13 +58,38 @@ hr{
     font-weight: bold;
     font-size: 1.5em;
 }
-.project-content{
+.project-subtitle{
     font-size: 0.8em;
     text-align: center;
     font-style: italic;
     width: 20em;
     margin: auto;
+    color: #4C8AF2;
 }
+.project-stack{
+    width: 20vw;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.project-stack p{
+    margin:0.5em;
+    padding: 5px 5px;
+    background-color: #f5f5f5;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
 .project-link-container{
     display: flex;
     flex-flow: row;

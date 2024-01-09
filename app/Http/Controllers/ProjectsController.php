@@ -22,9 +22,8 @@ class ProjectsController extends Controller
 
     public function addForm()
     {
-        return view('projects.add', [
-            'types' => Type::all(),
-            'stakcs' => Stack::all(),
+        return view('projects.add',[
+            'types'=> Type::all(),
         ]);
     }
 
@@ -36,16 +35,44 @@ class ProjectsController extends Controller
             'title' => 'required',
             'slug' => 'nullable|url',
             'url' => 'nullable|url',
-            'content' => 'required',
-            'type_id' => 'required',
+            'subtitle'=> 'nullable|string',
+            'content1' => 'nullable|string',
+            'content2' => 'nullable|string',
+            'content3' => 'nullable|string',
+            'type_id' => 'nullable|integer',
+            'stack1' => 'nullable|string',
+            'stack2' => 'nullable|string',
+            'stack3' => 'nullable|string',
+            'stack4' => 'nullable|string',
+            'stack5' => 'nullable|string',
+            'stack6' => 'nullable|string',
+            'stack7' => 'nullable|string',
+            'stack8' => 'nullable|string',
+            'stack9' => 'nullable|string',
+            'stack10' => 'nullable|string',
         ]);
 
         $project = new Project();
         $project->title = $attributes['title'];
         $project->slug = $attributes['slug'];
         $project->url = $attributes['url'];
-        $project->content = $attributes['content'];
+        $project->subtitle = $attributes['subtitle'];
+        $project->content1 = $attributes['content1'];
+        $project->content2 = $attributes['content2'];
+        $project->content3 = $attributes['content3'];
         $project->type_id = $attributes['type_id'];
+
+        $project->stack1 = $attributes['stack1'];
+        $project->stack2 = $attributes['stack2'];
+        $project->stack3 = $attributes['stack3'];
+        $project->stack4 = $attributes['stack4'];
+        $project->stack5 = $attributes['stack5'];
+        $project->stack6 = $attributes['stack6'];
+        $project->stack7 = $attributes['stack7'];
+        $project->stack8 = $attributes['stack8'];
+        $project->stack9 = $attributes['stack9'];
+        $project->stack10 = $attributes['stack10'];
+
         $project->user_id = Auth::user()->id;
         $project->save();
 
@@ -57,8 +84,7 @@ class ProjectsController extends Controller
     {
         return view('projects.edit', [
             'project' => $project,
-            'types' => Type::all(),
-            'stakcs' => Stack::all(),
+            'types'=> Type::all(),
         ]);
     }
 
@@ -69,15 +95,43 @@ class ProjectsController extends Controller
             'title' => 'required',
             'slug' => 'nullable|url',
             'url' => 'nullable|url',
-            'content' => 'required',
-            'type_id' => 'required',
+            'subtitle'=> 'nullable|string',
+            'content1' => 'nullable|string',
+            'content2' => 'nullable|string',
+            'content3' => 'nullable|string',
+            'type_id' => 'nullable|integer',
+            'stack1' => 'nullable|string',
+            'stack2' => 'nullable|string',
+            'stack3' => 'nullable|string',
+            'stack4' => 'nullable|string',
+            'stack5' => 'nullable|string',
+            'stack6' => 'nullable|string',
+            'stack7' => 'nullable|string',
+            'stack8' => 'nullable|string',
+            'stack9' => 'nullable|string',
+            'stack10' => 'nullable|string',
         ]);
 
         $project->title = $attributes['title'];
         $project->slug = $attributes['slug'];
         $project->url = $attributes['url'];
-        $project->content = $attributes['content'];
+        $project->subtitle = $attributes['subtitle'];
+        $project->content1 = $attributes['content1'];
+        $project->content2 = $attributes['content2'];
+        $project->content3 = $attributes['content3'];
         $project->type_id = $attributes['type_id'];
+
+        $project->stack1 = $attributes['stack1'];
+        $project->stack2 = $attributes['stack2'];
+        $project->stack3 = $attributes['stack3'];
+        $project->stack4 = $attributes['stack4'];
+        $project->stack5 = $attributes['stack5'];
+        $project->stack6 = $attributes['stack6'];
+        $project->stack7 = $attributes['stack7'];
+        $project->stack8 = $attributes['stack8'];
+        $project->stack9 = $attributes['stack9'];
+        $project->stack10 = $attributes['stack10'];
+
         $project->save();
 
         return redirect('/console/projects/list')

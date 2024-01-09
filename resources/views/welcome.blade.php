@@ -22,9 +22,25 @@
                 {{$project->title}}
             </div>
 
-            <div class="project-content">
-                {{$project->content}}
+            <div class="project-subtitle">
+                {{$project->subtitle}}
             </div>
+
+            <div class="project-stack">
+                @for ($i = 1; $i <= 10; $i++)
+                    @php
+                    $stackKey = "stack{$i}";
+                    @endphp
+
+                    @if (!empty($project->$stackKey))
+                    <p class="stack-title">
+                        {{$project->$stackKey}}
+                    </p>
+                    @endif
+                @endfor
+            </div>
+
+
 
             <div class="project-link-container">
                 <div class="project-link">
