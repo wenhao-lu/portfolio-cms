@@ -114,6 +114,10 @@ hr{
     text-align: center;
     color: #4C8AF2;
 }
+.front-logged{
+    text-align: center;
+    color: #4C8AF2;
+}
 .contact-link-container{
     display: flex;
     justify-content: center;

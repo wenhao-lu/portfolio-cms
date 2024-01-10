@@ -31,9 +31,11 @@
 <footer class="w3-padding">
 
     @if (Auth::check())
+    <div class="front-logged">
         You are logged in as {{auth()->user()->first}} {{auth()->user()->last}} | 
         <a href="/console/logout">Log Out</a> | 
         <a href="/console/dashboard">Dashboard</a>
+    </div>
     @else
     <div class="front-login">
         <p class="login-text">Log Into CMS Dashboard</p>
